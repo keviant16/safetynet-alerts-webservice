@@ -42,7 +42,6 @@ public class IPersonService implements PersonService {
     public Person readPersonByFullName(String firstName, String lastName) {
         return personRepository.findPersonByFirstNameAndLastName(firstName, lastName).orElseThrow(() -> new ResourceNotFoundException("Person not found"));
     }
-
     @Override
     public List<Person> readPersonsByCity(String city) {
         return personRepository.findByCity(city);
